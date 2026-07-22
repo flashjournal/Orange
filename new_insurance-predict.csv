@@ -1,6 +1,0 @@
-Linear Regression,age,sex,bmi,children,smoker,region
-continuous,continuous,female male,continuous,continuous,no yes,southeast southwest
-meta,,,,,,
-24947.1,19,female,27.90,0,yes,southwest
-3755.86,18,male,33.77,1,no,southeast
-6816.19,28,male,33.00,3,no,southeast
