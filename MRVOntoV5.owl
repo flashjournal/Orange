@@ -1,0 +1,2372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+    xmlns="http://example.org/mrv#"
+    xml:base="http://example.org/mrv"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:prov="http://www.w3.org/ns/prov#">
+
+    <!-- ===================================================== -->
+    <!-- ONTOLOGY                                               -->
+    <!-- ===================================================== -->
+
+    <owl:Ontology rdf:about="http://example.org/mrv">
+
+        <rdfs:label>MRV Core Ontology</rdfs:label>
+
+        <rdfs:comment>
+            Core class hierarchy for Carbon MRV Ontology
+        </rdfs:comment>
+
+    </owl:Ontology>
+
+    <!-- ===================================================== -->
+    <!-- ABSTRACT SUPERCLASSES                                 -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#Entity"/>
+
+    <owl:Class rdf:about="#PhysicalEntity">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#InformationEntity">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#CarbonAsset">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- AGENTS                                                 -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#Agent">
+
+        <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+
+    </owl:Class>
+
+    <owl:Class rdf:about="#Organization">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Business">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Government">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Institution">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#NGO">
+        <rdfs:subClassOf rdf:resource="#Organization"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Reviewer">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Validator">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Verifier">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Publisher">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Proponent">
+        <rdfs:subClassOf rdf:resource="#Agent"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- PHYSICAL ENTITIES                                     -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#Location">
+        <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Registry">
+        <rdfs:subClassOf rdf:resource="#PhysicalEntity"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- INFORMATION ENTITIES                                  -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#Project">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Document">
+        <rdfs:subClassOf rdf:resource="#InformationEntity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#GeneralDocument">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#TechnicalDocument">
+        <rdfs:subClassOf rdf:resource="#Document"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DRAM">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#DRAMFinal">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#LCAM">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ValidationReport">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#VerificationReport">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#EmissionWorksheet">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SupportingDocument">
+        <rdfs:subClassOf rdf:resource="#TechnicalDocument"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Certificate">
+        <rdfs:subClassOf rdf:resource="#InformationEntity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#SPECertificate">
+        <rdfs:subClassOf rdf:resource="#Certificate"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#RegistryNumber">
+        <rdfs:subClassOf rdf:resource="#InformationEntity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Methodology">
+        <rdfs:subClassOf rdf:resource="#InformationEntity"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- CARBON ASSETS                                         -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#CER">
+        <rdfs:subClassOf rdf:resource="#CarbonAsset"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- MRV WORKFLOW                                           -->
+    <!-- ===================================================== -->
+
+    <owl:Class rdf:about="#MRVActivity">
+
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+
+    </owl:Class>
+
+    <owl:Class rdf:about="#Proposal">
+        <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Validation">
+        <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Verification">
+        <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Publication">
+        <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+    </owl:Class>
+
+    <!-- ===================================================== -->
+    <!-- DISJOINT AXIOMS                                       -->
+    <!-- ===================================================== -->
+
+    <owl:AllDisjointClasses>
+
+        <owl:members rdf:parseType="Collection">
+
+            <rdf:Description rdf:about="#Proposal"/>
+            <rdf:Description rdf:about="#Validation"/>
+            <rdf:Description rdf:about="#Verification"/>
+            <rdf:Description rdf:about="#Publication"/>
+
+        </owl:members>
+
+    </owl:AllDisjointClasses>
+
+    <owl:AllDisjointClasses>
+
+        <owl:members rdf:parseType="Collection">
+
+            <rdf:Description rdf:about="#GeneralDocument"/>
+            <rdf:Description rdf:about="#TechnicalDocument"/>
+
+        </owl:members>
+
+    </owl:AllDisjointClasses>
+
+    <owl:AllDisjointClasses>
+
+        <owl:members rdf:parseType="Collection">
+
+            <rdf:Description rdf:about="#Business"/>
+            <rdf:Description rdf:about="#Government"/>
+            <rdf:Description rdf:about="#Institution"/>
+            <rdf:Description rdf:about="#NGO"/>
+
+        </owl:members>
+
+    </owl:AllDisjointClasses>
+
+    <owl:AllDisjointClasses>
+
+        <owl:members rdf:parseType="Collection">
+
+            <rdf:Description rdf:about="#Reviewer"/>
+            <rdf:Description rdf:about="#Validator"/>
+            <rdf:Description rdf:about="#Verifier"/>
+            <rdf:Description rdf:about="#Publisher"/>
+            <rdf:Description rdf:about="#Proponent"/>
+
+        </owl:members>
+
+    </owl:AllDisjointClasses>
+
+    <owl:AllDisjointClasses>
+
+        <owl:members rdf:parseType="Collection">
+
+            <rdf:Description rdf:about="#DRAM"/>
+            <rdf:Description rdf:about="#DRAMFinal"/>
+            <rdf:Description rdf:about="#LCAM"/>
+            <rdf:Description rdf:about="#ValidationReport"/>
+            <rdf:Description rdf:about="#VerificationReport"/>
+            <rdf:Description rdf:about="#EmissionWorksheet"/>
+            <rdf:Description rdf:about="#SupportingDocument"/>
+
+        </owl:members>
+
+    </owl:AllDisjointClasses>
+
+<!-- ===================================================== -->
+<!-- Disjoint MRV Workflow Activities -->
+<!-- ===================================================== -->
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#Proposal"/>
+
+        <rdf:Description rdf:about="#Validation"/>
+
+        <rdf:Description rdf:about="#Verification"/>
+
+        <rdf:Description rdf:about="#Publication"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+  
+<!-- ===================================================== -->
+<!-- Disjoint Technical Documents -->
+<!-- ===================================================== -->
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#DRAM"/>
+
+        <rdf:Description rdf:about="#DRAMFinal"/>
+
+        <rdf:Description rdf:about="#LCAM"/>
+
+        <rdf:Description rdf:about="#ValidationReport"/>
+
+        <rdf:Description rdf:about="#VerificationReport"/>
+
+        <rdf:Description rdf:about="#EmissionWorksheet"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+<!-- ===================================================== -->
+<!-- Disjoint MRV Roles -->
+<!-- ===================================================== -->
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#Reviewer"/>
+
+        <rdf:Description rdf:about="#Validator"/>
+
+        <rdf:Description rdf:about="#Verifier"/>
+
+        <rdf:Description rdf:about="#Publisher"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#Proponent"/>
+
+        <rdf:Description rdf:about="#Reviewer"/>
+
+        <rdf:Description rdf:about="#Validator"/>
+
+        <rdf:Description rdf:about="#Verifier"/>
+
+        <rdf:Description rdf:about="#Publisher"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#PhysicalEntity"/>
+
+        <rdf:Description rdf:about="#InformationEntity"/>
+
+        <rdf:Description rdf:about="#CarbonAsset"/>
+
+        <rdf:Description rdf:about="#MRVActivity"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#Business"/>
+
+        <rdf:Description rdf:about="#Government"/>
+
+        <rdf:Description rdf:about="#Institution"/>
+
+        <rdf:Description rdf:about="#NGO"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+<owl:AllDisjointClasses>
+
+    <owl:members rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#Document"/>
+
+        <rdf:Description rdf:about="#Certificate"/>
+
+        <rdf:Description rdf:about="#Methodology"/>
+
+        <rdf:Description rdf:about="#RegistryNumber"/>
+
+    </owl:members>
+
+</owl:AllDisjointClasses>
+
+<!-- ========================================================= -->
+<!-- PROJECT PROPERTIES                                        -->
+<!-- ========================================================= -->
+
+<owl:ObjectProperty rdf:about="#implementedBy">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Business"/>
+    <owl:inverseOf rdf:resource="#implementsProject"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#implementsProject">
+    <rdfs:domain rdf:resource="#Business"/>
+    <rdfs:range rdf:resource="#Project"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDocument">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Document"/>
+    <owl:inverseOf rdf:resource="#belongsToProject"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#belongsToProject">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Project"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#registeredIn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Registry"/>
+    <owl:inverseOf rdf:resource="#registersProject"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#registersProject">
+    <rdfs:domain rdf:resource="#Registry"/>
+    <rdfs:range rdf:resource="#Project"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocation">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Location"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesMethodology">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#Methodology"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCertificate">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#SPECertificate"/>
+    <owl:inverseOf rdf:resource="#issuedForProject"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCER">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#CER"/>
+</owl:ObjectProperty>
+
+<!-- corrected by gemini -->  
+
+<owl:ObjectProperty rdf:about="#hasRegistryNumber">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="#RegistryNumber"/>
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- WORKFLOW                                                  -->
+<!-- ========================================================= -->
+
+<owl:ObjectProperty rdf:about="#hasProject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#Project"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#performedBy">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#Agent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasInputDocument">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasOutputDocument">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#nextProcess">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#MRVActivity"/>
+    <owl:inverseOf rdf:resource="#previousProcess"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#previousProcess">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="#MRVActivity"/>
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- DOCUMENT                                                  -->
+<!-- ========================================================= -->
+
+<owl:ObjectProperty rdf:about="#basedOn">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Document"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#preparedBy">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Agent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#reviewedBy">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Reviewer"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#validatedBy">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Validator"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#verifiedBy">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Verifier"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#publishedBy">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="#Publisher"/>
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- CERTIFICATE                                               -->
+<!-- ========================================================= -->
+
+<owl:ObjectProperty rdf:about="#issuedForProject">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="#Project"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#issuedByRegistry">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="#Registry"/>
+    <owl:inverseOf rdf:resource="#issuesCertificate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#issuesCertificate">
+    <rdfs:domain rdf:resource="#Registry"/>
+    <rdfs:range rdf:resource="#SPECertificate"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#certifiesCER">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="#CER"/>
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- Restriction - Proposal                                    -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Proposal">
+
+    <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasProject"/>
+
+            <owl:qualifiedCardinality
+                rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">
+
+                1
+
+            </owl:qualifiedCardinality>
+
+            <owl:onClass rdf:resource="#Project"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - Validation-InputDRAM                        -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Validation">
+
+    <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasInputDocument"/>
+
+            <owl:someValuesFrom rdf:resource="#DRAM"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - Verification Output LCAM                    -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Verification">
+
+    <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasOutputDocument"/>
+
+            <owl:someValuesFrom rdf:resource="#LCAM"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - Publication Output Certificate SPE          -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Publication">
+
+    <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasOutputDocument"/>
+
+            <owl:someValuesFrom rdf:resource="#SPECertificate"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - Project, at least one document          -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Project">
+
+    <rdfs:subClassOf rdf:resource="#Entity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasDocument"/>
+
+            <owl:minQualifiedCardinality
+                rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">
+
+                1
+
+            </owl:minQualifiedCardinality>
+
+            <owl:onClass rdf:resource="#Document"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - Project, exactly one registry               -->
+<!-- ========================================================= -->
+
+<owl:Class rdf:about="#Project">
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#registeredIn"/>
+
+            <owl:qualifiedCardinality
+                rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">
+
+                1
+
+            </owl:qualifiedCardinality>
+
+            <owl:onClass rdf:resource="#Registry"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- ========================================================= -->
+<!-- Restriction - OWL restriction             -->
+<!-- ========================================================= -->
+<owl:Class rdf:about="#Proposal">
+
+    <rdfs:subClassOf rdf:resource="#MRVActivity"/>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#performedBy"/>
+            <owl:allValuesFrom rdf:resource="#Proponent"/>
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasInputDocument"/>
+            <owl:someValuesFrom rdf:resource="#GeneralDocument"/>
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+            <owl:onProperty rdf:resource="#hasOutputDocument"/>
+            <owl:someValuesFrom rdf:resource="#DRAM"/>
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+
+<!-- Validation -->
+
+<owl:Class rdf:about="#Validation">
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#performedBy"/>
+
+            <owl:allValuesFrom rdf:resource="#Validator"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasInputDocument"/>
+
+            <owl:someValuesFrom rdf:resource="#DRAM"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+    <rdfs:subClassOf>
+
+        <owl:Restriction>
+
+            <owl:onProperty rdf:resource="#hasOutputDocument"/>
+
+            <owl:someValuesFrom rdf:resource="#DRAMFinal"/>
+
+        </owl:Restriction>
+
+    </rdfs:subClassOf>
+
+</owl:Class>
+
+<!-- OWL Lineage -->
+
+<owl:ObjectProperty rdf:about="#basedOn">
+
+    <rdfs:domain rdf:resource="#Document"/>
+
+    <rdfs:range rdf:resource="#Document"/>
+
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- Restriction - Document Connectivity              -->
+<!-- ========================================================= -->
+<owl:ObjectProperty rdf:about="#implementedBy">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#Business"/>
+
+    <owl:inverseOf rdf:resource="#implementsProject"/>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#implementsProject">
+
+    <rdfs:domain rdf:resource="#Business"/>
+
+    <rdfs:range rdf:resource="#Project"/>
+
+</owl:ObjectProperty>
+<!-- ========================================================= -->
+<!-- Restriction - Business connectivity                       -->
+<!-- ========================================================= -->
+
+<owl:ObjectProperty rdf:about="#implementedBy">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#Business"/>
+
+    <owl:inverseOf rdf:resource="#implementsProject"/>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#implementsProject">
+
+    <rdfs:domain rdf:resource="#Business"/>
+
+    <rdfs:range rdf:resource="#Project"/>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#submittedBy">
+
+    <rdfs:domain rdf:resource="#Proposal"/>
+
+    <rdfs:range rdf:resource="#Business"/>
+
+</owl:ObjectProperty>
+<!-- ========================================================= -->
+<!-- Restriction - Registry Connectivity         -->
+<!-- ========================================================= -->
+<owl:ObjectProperty rdf:about="#registeredIn">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#Registry"/>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#issuesCertificate">
+
+    <rdfs:domain rdf:resource="#Registry"/>
+
+    <rdfs:range rdf:resource="#SPECertificate"/>
+
+</owl:ObjectProperty>
+<!-- ========================================================= -->
+<!-- Restriction - Certificate Connectivity         -->
+<!-- ========================================================= -->
+<owl:ObjectProperty rdf:about="#hasCertificate">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#SPECertificate"/>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#certifiesCER">
+
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+
+    <rdfs:range rdf:resource="#CER"/>
+
+</owl:ObjectProperty>
+<!-- ========================================================= -->
+<!-- Restriction - Methodology Connectivity         -->
+<!-- ========================================================= -->
+<owl:ObjectProperty rdf:about="#usesMethodology">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#Methodology"/>
+
+</owl:ObjectProperty>
+<!-- ========================================================= -->
+<!-- Restriction - Location Connectivity         -->
+<!-- ========================================================= -->
+<owl:ObjectProperty rdf:about="#hasLocation">
+
+    <rdfs:domain rdf:resource="#Project"/>
+
+    <rdfs:range rdf:resource="#Location"/>
+
+</owl:ObjectProperty>
+
+<!-- ===================================================== -->
+<!-- Property Chain: Project -> Certificate -> Registry -->
+<!-- ===================================================== -->
+
+<owl:ObjectProperty rdf:about="#registeredIn">
+
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasCertificate"/>
+
+        <rdf:Description rdf:about="#issuedByRegistry"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<!-- ===================================================== -->
+<!-- Property Chain: Project -> Certificate -> CER -->
+<!-- ===================================================== -->
+
+<owl:ObjectProperty rdf:about="#hasCER">
+
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasCertificate"/>
+
+        <rdf:Description rdf:about="#certifiesCER"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+
+<!-- ===================================================== -->
+<!-- Property Chain: Proposal -> Project -> Registry -->
+<!-- ===================================================== -->
+
+<owl:ObjectProperty rdf:about="#registeredIn">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#registeredIn"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#submittedBy">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#implementedBy"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLocation">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#hasLocation"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#usesMethodology">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#usesMethodology"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCertificate">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#hasCertificate"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+
+<owl:ObjectProperty rdf:about="#hasCER">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#hasProject"/>
+
+        <rdf:Description rdf:about="#hasCER"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<!-- document lineage -->
+
+
+<owl:ObjectProperty rdf:about="#belongsToProject">
+
+    <owl:propertyChainAxiom rdf:parseType="Collection">
+
+        <rdf:Description rdf:about="#belongsToProject"/>
+
+    </owl:propertyChainAxiom>
+
+</owl:ObjectProperty>
+
+<!-- ========================================================= -->
+<!-- DATATYPE PROPERTIES                                       -->
+<!-- ========================================================= -->
+
+<!-- ========================================================= -->
+<!-- PROJECT                                                   -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#projectTitle">
+    <rdfs:label>Project Title</rdfs:label>
+    <rdfs:comment>Official title of the MRV project.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#registryNumber">
+    <rdfs:label>Registry Number</rdfs:label>
+    <rdfs:comment>Official registry identification number.</rdfs:comment>
+    <rdfs:domain rdf:resource="#RegistryNumber"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#cerValue">
+    <rdfs:label>CER Value</rdfs:label>
+    <rdfs:comment>Certified Emission Reduction value.</rdfs:comment>
+    <rdfs:domain rdf:resource="#CER"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#issuanceDate">
+    <rdfs:label>Issuance Date</rdfs:label>
+    <rdfs:comment>Date the certificate was issued.</rdfs:comment>
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- ORGANIZATION                                              -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#organizationName">
+    <rdfs:label>Organization Name</rdfs:label>
+    <rdfs:comment>Name of the organization.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- METHODOLOGY                                               -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#methodologyCode">
+    <rdfs:label>Methodology Code</rdfs:label>
+    <rdfs:comment>Official methodology identifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Methodology"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- DOCUMENT                                                  -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#documentNumber">
+    <rdfs:label>Document Number</rdfs:label>
+    <rdfs:comment>Official document identifier.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#documentVersion">
+    <rdfs:label>Document Version</rdfs:label>
+    <rdfs:comment>Version number of the document.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- ACTIVITY                                                  -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#activityDate">
+    <rdfs:label>Activity Date</rdfs:label>
+    <rdfs:comment>Date when the MRV activity occurred.</rdfs:comment>
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#status">
+    <rdfs:label>Status</rdfs:label>
+    <rdfs:comment>Current lifecycle status.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#remarks">
+    <rdfs:label>Remarks</rdfs:label>
+    <rdfs:comment>Additional remarks or notes.</rdfs:comment>
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- PROJECT -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#projectCode">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#projectTitle">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#projectDescription">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#projectStartDate">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#projectEndDate">
+    <rdfs:domain rdf:resource="#Project"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- REGISTRY -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#registryName">
+    <rdfs:domain rdf:resource="#Registry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#registryVersion">
+    <rdfs:domain rdf:resource="#Registry"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#registryNumber">
+    <rdfs:domain rdf:resource="#RegistryNumber"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- ORGANIZATION -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#organizationName">
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#organizationCode">
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#organizationAddress">
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#organizationEmail">
+    <rdfs:domain rdf:resource="#Organization"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- LOCATION -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#latitude">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#longitude">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#province">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#city">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#country">
+    <rdfs:domain rdf:resource="#Location"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- METHODOLOGY -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#methodologyCode">
+    <rdfs:domain rdf:resource="#Methodology"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#methodologyVersion">
+    <rdfs:domain rdf:resource="#Methodology"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#methodologyName">
+    <rdfs:domain rdf:resource="#Methodology"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- DOCUMENT -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#documentNumber">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#documentTitle">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#documentVersion">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#documentDate">
+    <rdfs:domain rdf:resource="#Document"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- WORKFLOW -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#activityDate">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#completionDate">
+    <rdfs:domain rdf:resource="#MRVActivity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#remarks">
+    <rdfs:domain rdf:resource="#Entity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- CERTIFICATE -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#certificateNumber">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#issuanceDate">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#expiryDate">
+    <rdfs:domain rdf:resource="#SPECertificate"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- CER -->
+<!-- ========================================================= -->
+
+<owl:DatatypeProperty rdf:about="#cerValue">
+    <rdfs:domain rdf:resource="#CER"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#serialStart">
+    <rdfs:domain rdf:resource="#CER"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#serialEnd">
+    <rdfs:domain rdf:resource="#CER"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<!-- ========================================================= -->
+<!-- Individual Properties -->
+<!-- ========================================================= -->
+
+
+<!-- Registry -->
+
+<Registry rdf:about="#SPEIRegistry">
+    <registryName>SPEI Registry</registryName>
+</Registry>
+
+<!-- Methodologies -->
+
+<Methodology rdf:about="#POME_Methane_Recovery">
+    <methodologyCode>POME-001</methodologyCode>
+    <methodologyName>Methane Recovery from Palm Oil Mill Effluent</methodologyName>
+</Methodology>
+
+<!-- ========================================================= -->
+<!--remove unused instance, (gemini suggest) 
+    <Methodology rdf:about="#WindPower_Methodology">
+    <methodologyCode>WIND-001</methodologyCode>
+    <methodologyName>Grid Connected Wind Power</methodologyName>
+</Methodology> -->
+
+
+<!-- ========================================================= -->
+<!-- PT Nagata Bio energi -->
+<!-- ========================================================= -->
+
+
+<!-- Business -->
+
+<Business rdf:about="#PT_Nagata_Bio_Energi">
+
+    <organizationName>
+        PT Nagata Bio Energi
+    </organizationName>
+
+</Business>
+
+
+<!-- Location -->
+
+<Location rdf:about="#Sukamakmur_Bogor">
+
+    <city>Bogor</city>
+
+    <province>West Java</province>
+
+    <country>Indonesia</country>
+
+</Location>
+
+
+<!-- CER -->
+
+<CER rdf:about="#CER_Nagata">
+
+    <cerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">
+
+        47799
+
+    </cerValue>
+
+</CER>
+
+
+<!-- Registry Number -->
+
+<RegistryNumber rdf:about="#RegistryNo_Nagata">
+
+    <registryNumber>
+
+        SPE-10-PR-V-2023-10134
+
+    </registryNumber>
+
+</RegistryNumber>
+
+
+<!-- Certificate -->
+
+<SPECertificate rdf:about="#Certificate_Nagata">
+
+    <certificateNumber>
+
+        SPE-10-PR-V-2023-10134
+
+    </certificateNumber>
+
+    <issuanceDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-24T00:00:00
+    </issuanceDate>
+
+    <issuedByRegistry rdf:resource="#SPEIRegistry"/>
+
+    <certifiesCER rdf:resource="#CER_Nagata"/>
+
+</SPECertificate>
+
+
+<!-- Emission Worksheet -->
+
+<EmissionWorksheet rdf:about="#EW_Nagata">
+
+    <documentNumber>
+
+        EW-001
+
+    </documentNumber>
+
+</EmissionWorksheet>
+
+
+<!-- Project -->
+
+<Project rdf:about="#Project_Nagata">
+
+    <projectTitle>
+
+        Pembangkit Listrik Tenaga Biogas Sukadamai 2.4 MW dari Recovery Biogas pada Pengolahan Limbah POME
+
+    </projectTitle>
+
+    <implementedBy rdf:resource="#PT_Nagata_Bio_Energi"/>
+
+    <hasLocation rdf:resource="#Sukamakmur_Bogor"/>
+
+    <registeredIn rdf:resource="#SPEIRegistry"/>
+
+    <usesMethodology rdf:resource="#POME_Methane_Recovery"/>
+
+    <hasCertificate rdf:resource="#Certificate_Nagata"/>
+
+    <hasCER rdf:resource="#CER_Nagata"/>
+
+    <hasDocument rdf:resource="#EW_Nagata"/>
+
+    <hasRegistryNumber rdf:resource="#RegistryNo_Nagata"/>
+
+</Project>
+
+<!-- ========================================================= -->
+<!-- PT Pertamina Power Indonesia -->
+<!-- ========================================================= -->
+
+
+<!-- Business -->
+
+<Business rdf:about="#PT_Pertamina_Power_Indonesia">
+
+    <organizationName>
+        PT Pertamina Power Indonesia
+    </organizationName>
+
+</Business>
+
+
+<!-- Location -->
+
+<Location rdf:about="#Sei_Mangkei">
+
+    <city>Simalungun</city>
+
+    <province>North Sumatera</province>
+
+    <country>Indonesia</country>
+
+</Location>
+
+<!-- Registry -->
+
+<Registry rdf:about="#SPEIRegistry">
+
+    <registryName>SPEI Registry</registryName>
+
+</Registry>
+
+
+<!-- CER -->
+
+<CER rdf:about="#CER_Pertamina">
+
+    <cerValue
+        rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">
+
+        8192
+
+    </cerValue>
+
+</CER>
+
+
+<!-- Registry Number -->
+
+<RegistryNumber rdf:about="#RegistryNo_Pertamina">
+
+    <registryNumber>
+
+        SPE-10-PR-IV-2024-17599
+
+    </registryNumber>
+
+</RegistryNumber>
+
+
+<!-- Methodology -->
+
+<Methodology rdf:about="#POME_Methane_Recovery">
+
+    <methodologyCode>POME-001</methodologyCode>
+
+    <methodologyName>
+
+        Methane Recovery from Palm Oil Mill Effluent (POME)
+
+    </methodologyName>
+
+</Methodology>
+
+
+<!-- Certificate -->
+
+<SPECertificate rdf:about="#Certificate_Pertamina">
+
+    <certificateNumber>
+
+        SPE-10-PR-IV-2024-17599
+
+    </certificateNumber>
+
+    <issuanceDate
+        rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-25T00:00:00
+        </issuanceDate>
+
+    <issuedByRegistry rdf:resource="#SPEIRegistry"/>
+
+    <certifiesCER rdf:resource="#CER_Pertamina"/>
+
+</SPECertificate>
+
+<!-- Emission Worksheet -->
+
+<EmissionWorksheet rdf:about="#EmissionWorksheet_Pertamina">
+
+    <documentNumber>
+
+        EW-PERTAMINA-001
+
+    </documentNumber>
+
+    <documentVersion>1.0</documentVersion>
+
+</EmissionWorksheet>
+
+<!-- Documents -->
+
+<DRAM rdf:about="#DRAM_Pertamina">
+
+    <documentNumber>
+
+        DRAM-PPI-001
+
+    </documentNumber>
+
+</DRAM>
+
+
+<DRAMFinal rdf:about="#DRAMFinal_Pertamina">
+
+    <documentNumber>
+
+        DRAMF-PPI-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAM_Pertamina"/>
+
+</DRAMFinal>
+
+
+<ValidationReport rdf:about="#ValidationReport_Pertamina">
+
+    <documentNumber>
+
+        VR-PPI-001
+
+    </documentNumber>
+
+</ValidationReport>
+
+
+<LCAM rdf:about="#LCAM_Pertamina">
+
+    <documentNumber>
+
+        LCAM-PPI-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAMFinal_Pertamina"/>
+
+</LCAM>
+
+
+<VerificationReport rdf:about="#VerificationReport_Pertamina">
+
+    <documentNumber>
+
+        VER-PPI-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#LCAM_Pertamina"/>
+
+</VerificationReport>
+
+
+
+<!-- Project -->
+
+<Project rdf:about="#Project_Pertamina">
+
+    <projectTitle>
+
+        [PNRE X PTPN III] Pembangkit Listrik Tenaga Biogas
+        (PLTBg) Sei Mangkei 2.4 MW dari Recovery Biogas
+        pada Pengolahan Limbah POME
+
+    </projectTitle>
+
+    <implementedBy
+        rdf:resource="#PT_Pertamina_Power_Indonesia"/>
+
+    <hasLocation
+        rdf:resource="#Sei_Mangkei"/>
+
+    <registeredIn
+        rdf:resource="#SPEIRegistry"/>
+
+    <usesMethodology
+        rdf:resource="#POME_Methane_Recovery"/>
+
+    <hasCertificate
+        rdf:resource="#Certificate_Pertamina"/>
+
+    <hasCER
+        rdf:resource="#CER_Pertamina"/>
+    
+    <hasRegistryNumber rdf:resource="#RegistryNo_Pertamina"/>
+
+    <hasDocument rdf:resource="#DRAM_Pertamina"/>
+
+    <hasDocument rdf:resource="#DRAMFinal_Pertamina"/>
+
+    <hasDocument rdf:resource="#LCAM_Pertamina"/>
+
+    <hasDocument rdf:resource="#ValidationReport_Pertamina"/>
+
+    <hasDocument rdf:resource="#VerificationReport_Pertamina"/>
+
+    <hasDocument rdf:resource="#EmissionWorksheet_Pertamina"/>
+
+</Project>
+
+<!-- MRV Workflow -->
+<Proposal rdf:about="#Proposal_Pertamina">
+
+    <hasProject rdf:resource="#Project_Pertamina"/>
+
+    <hasOutputDocument rdf:resource="#DRAM_Pertamina"/>
+
+    <nextProcess rdf:resource="#Validation_Pertamina"/>
+
+</Proposal>
+
+
+<Validation rdf:about="#Validation_Pertamina">
+
+    <hasProject rdf:resource="#Project_Pertamina"/>
+
+    <hasInputDocument rdf:resource="#DRAM_Pertamina"/>
+
+    <hasOutputDocument rdf:resource="#DRAMFinal_Pertamina"/>
+
+    <hasOutputDocument
+        rdf:resource="#ValidationReport_Pertamina"/>
+
+    <nextProcess
+        rdf:resource="#Verification_Pertamina"/>
+
+</Validation>
+
+
+<Verification rdf:about="#Verification_Pertamina">
+
+    <hasProject rdf:resource="#Project_Pertamina"/>
+
+    <hasInputDocument rdf:resource="#DRAMFinal_Pertamina"/>
+
+    <hasOutputDocument rdf:resource="#LCAM_Pertamina"/>
+
+    <hasOutputDocument
+        rdf:resource="#VerificationReport_Pertamina"/>
+
+    <hasOutputDocument
+        rdf:resource="#EmissionWorksheet_Pertamina"/>
+
+    <nextProcess
+        rdf:resource="#Publication_Pertamina"/>
+
+</Verification>
+
+
+<Publication rdf:about="#Publication_Pertamina">
+
+    <hasProject rdf:resource="#Project_Pertamina"/>
+
+    <hasInputDocument
+        rdf:resource="#VerificationReport_Pertamina"/>
+
+    <hasInputDocument
+        rdf:resource="#LCAM_Pertamina"/>
+
+    <hasOutputDocument
+        rdf:resource="#Certificate_Pertamina"/>
+
+</Publication>
+
+<!-- ========================================================= -->
+<!-- PT Perkebunan Nusantara IV Regional 3   -->
+<!-- ========================================================= -->
+
+<!-- BUSINESS -->
+
+<Business rdf:about="#PT_Perkebunan_Nusantara_IV_Regional_3">
+
+    <organizationName>
+        PT Perkebunan Nusantara IV Regional 3
+    </organizationName>
+
+</Business>
+
+<!-- LOCATION -->
+
+
+<Location rdf:about="#Riau">
+
+    <province>Riau</province>
+
+    <country>Indonesia</country>
+
+</Location>
+
+
+<!-- REGISTRY -->
+
+
+<Registry rdf:about="#SPEIRegistry">
+
+    <registryName>SPEI Registry</registryName>
+
+</Registry>
+
+
+<!-- REGISTRY NUMBER -->
+
+
+<RegistryNumber rdf:about="#RegistryNo_PTPN4">
+
+    <registryNumber>
+
+        SPE-11-PR-IV-2024-18003
+
+    </registryNumber>
+
+</RegistryNumber>
+
+
+<!-- METHODOLOGY -->
+
+
+<Methodology rdf:about="#POME_CoFiring_Methodology">
+
+    <methodologyCode>POME-002</methodologyCode>
+
+    <methodologyName>
+
+        Palm Oil Mill Effluent (POME) Biogas Co-Firing Methodology
+
+    </methodologyName>
+
+</Methodology>
+
+
+<!-- CER -->
+
+
+<CER rdf:about="#CER_PTPN4">
+
+    <cerValue rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">
+        12280
+    </cerValue>
+
+</CER>
+
+<!-- SPE CERTIFICATE -->
+
+<SPECertificate rdf:about="#Certificate_PTPN4">
+
+    <certificateNumber>
+    SPE-11-PR-IV-2024-18003
+    </certificateNumber>
+
+    <issuanceDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-25T00:00:00
+    </issuanceDate>
+
+    <issuedByRegistry rdf:resource="#SPEIRegistry"/>
+
+    <certifiesCER rdf:resource="#CER_PTPN4"/>
+
+</SPECertificate>
+
+
+<!-- EMISSION WORKSHEET -->
+
+
+<EmissionWorksheet rdf:about="#EmissionWorksheet_PTPN4">
+
+    <documentNumber>
+
+        EW-PTPN4-001
+
+    </documentNumber>
+
+    <documentVersion>1.0</documentVersion>
+
+</EmissionWorksheet>
+
+
+<!-- DOCUMENTS -->
+
+
+<DRAM rdf:about="#DRAM_PTPN4">
+
+    <documentNumber>
+
+        DRAM-PTPN4-001
+
+    </documentNumber>
+
+</DRAM>
+
+
+<DRAMFinal rdf:about="#DRAMFinal_PTPN4">
+
+    <documentNumber>
+
+        DRAMF-PTPN4-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAM_PTPN4"/>
+
+</DRAMFinal>
+
+
+<ValidationReport rdf:about="#ValidationReport_PTPN4">
+
+    <documentNumber>
+
+        VALREP-PTPN4-001
+
+    </documentNumber>
+
+</ValidationReport>
+
+
+<LCAM rdf:about="#LCAM_PTPN4">
+
+    <documentNumber>
+
+        LCAM-PTPN4-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAMFinal_PTPN4"/>
+
+</LCAM>
+
+
+<VerificationReport rdf:about="#VerificationReport_PTPN4">
+
+    <documentNumber>
+
+        VERREP-PTPN4-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#LCAM_PTPN4"/>
+
+</VerificationReport>
+
+
+<!-- PROJECT -->
+
+
+<Project rdf:about="#Project_PTPN4">
+
+    <projectTitle>
+
+        Pemanfaatan Limbah Pabrik Kelapa Sawit (POME)
+        untuk Biogas Co-Firing
+
+    </projectTitle>
+
+    <implementedBy
+        rdf:resource="#PT_Perkebunan_Nusantara_IV_Regional_3"/>
+
+    <hasLocation
+        rdf:resource="#Riau"/>
+
+    <registeredIn
+        rdf:resource="#SPEIRegistry"/>
+
+    <usesMethodology
+        rdf:resource="#POME_CoFiring_Methodology"/>
+
+    <hasCertificate
+        rdf:resource="#Certificate_PTPN4"/>
+
+    <hasCER
+        rdf:resource="#CER_PTPN4"/>
+    
+    <hasRegistryNumber rdf:resource="#RegistryNo_PTPN4"/>
+
+    <hasDocument rdf:resource="#DRAM_PTPN4"/>
+
+    <hasDocument rdf:resource="#DRAMFinal_PTPN4"/>
+
+    <hasDocument rdf:resource="#LCAM_PTPN4"/>
+
+    <hasDocument rdf:resource="#ValidationReport_PTPN4"/>
+
+    <hasDocument rdf:resource="#VerificationReport_PTPN4"/>
+
+    <hasDocument rdf:resource="#EmissionWorksheet_PTPN4"/>
+
+</Project>
+
+
+<!-- MRV WORKFLOW -->
+
+
+<Proposal rdf:about="#Proposal_PTPN4">
+
+    <hasProject rdf:resource="#Project_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#DRAM_PTPN4"/>
+
+    <nextProcess rdf:resource="#Validation_PTPN4"/>
+
+</Proposal>
+
+
+<Validation rdf:about="#Validation_PTPN4">
+
+    <hasProject rdf:resource="#Project_PTPN4"/>
+
+    <hasInputDocument rdf:resource="#DRAM_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#DRAMFinal_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#ValidationReport_PTPN4"/>
+
+    <nextProcess rdf:resource="#Verification_PTPN4"/>
+
+</Validation>
+
+
+<Verification rdf:about="#Verification_PTPN4">
+
+    <hasProject rdf:resource="#Project_PTPN4"/>
+
+    <hasInputDocument rdf:resource="#DRAMFinal_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#LCAM_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#VerificationReport_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#EmissionWorksheet_PTPN4"/>
+
+    <nextProcess rdf:resource="#Publication_PTPN4"/>
+
+</Verification>
+
+
+<Publication rdf:about="#Publication_PTPN4">
+
+    <hasProject rdf:resource="#Project_PTPN4"/>
+
+    <hasInputDocument rdf:resource="#VerificationReport_PTPN4"/>
+
+    <hasInputDocument rdf:resource="#LCAM_PTPN4"/>
+
+    <hasOutputDocument rdf:resource="#Certificate_PTPN4"/>
+
+</Publication>
+
+
+<!-- ========================================================= -->
+<!-- PT UPC Sidrap Bayu Energi -->
+<!-- ========================================================= -->
+
+<!-- Business  -->
+<Business rdf:about="#PT_UPC_Sidrap_Bayu_Energi">
+
+    <organizationName>
+        PT UPC Sidrap Bayu Energi
+    </organizationName>
+
+</Business>
+
+<!-- LOCATION -->
+
+<Location rdf:about="#Sidrap_SouthSulawesi">
+
+    <city>Sidenreng Rappang</city>
+
+    <province>South Sulawesi</province>
+
+    <country>Indonesia</country>
+
+</Location>
+
+<!-- REGISTRY -->
+
+<Registry rdf:about="#SPEIRegistry">
+
+    <registryName>SPEI Registry</registryName>
+
+</Registry>
+
+<!-- REGISTRY NUMBER -->
+
+<RegistryNumber rdf:about="#RegistryNo_Sidrap">
+
+    <registryNumber>
+
+        SPE-10-PR-XI-2022-11275
+
+    </registryNumber>
+
+</RegistryNumber>
+
+<!-- METHODOLOGY -->
+
+<Methodology rdf:about="#GoldStandard_Wind_Methodology">
+
+    <methodologyCode>GS-WIND-001</methodologyCode>
+
+    <methodologyName>
+
+        Gold Standard Wind Power Methodology
+
+    </methodologyName>
+
+</Methodology>
+
+<!-- CER -->
+
+<CER rdf:about="#CER_Sidrap">
+
+    <cerValue
+        rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">
+
+        1000
+
+    </cerValue>
+
+</CER>
+
+<!-- SPE CERTIFICATE -->
+
+<SPECertificate rdf:about="#Certificate_Sidrap">
+
+    <certificateNumber>
+
+        SPE-10-PR-XI-2022-11275
+
+    </certificateNumber>
+
+    <issuanceDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-10-23T00:00:00
+    </issuanceDate>
+
+    <issuedByRegistry rdf:resource="#SPEIRegistry"/>
+
+    <certifiesCER rdf:resource="#CER_Sidrap"/>
+
+</SPECertificate>
+
+<!-- EMISSION WORKSHEET -->
+
+<EmissionWorksheet rdf:about="#EmissionWorksheet_Sidrap">
+
+    <documentNumber>
+
+        EW-SIDRAP-001
+
+    </documentNumber>
+
+    <documentVersion>1.0</documentVersion>
+
+</EmissionWorksheet>
+
+<!-- DOCUMENTS -->
+
+<DRAM rdf:about="#DRAM_Sidrap">
+
+    <documentNumber>
+
+        DRAM-SIDRAP-001
+
+    </documentNumber>
+
+</DRAM>
+
+
+<DRAMFinal rdf:about="#DRAMFinal_Sidrap">
+
+    <documentNumber>
+
+        DRAMF-SIDRAP-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAM_Sidrap"/>
+
+</DRAMFinal>
+
+
+<ValidationReport rdf:about="#ValidationReport_Sidrap">
+
+    <documentNumber>
+
+        VALREP-SIDRAP-001
+
+    </documentNumber>
+
+</ValidationReport>
+
+
+<LCAM rdf:about="#LCAM_Sidrap">
+
+    <documentNumber>
+
+        LCAM-SIDRAP-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#DRAMFinal_Sidrap"/>
+
+</LCAM>
+
+
+<VerificationReport rdf:about="#VerificationReport_Sidrap">
+
+    <documentNumber>
+
+        VERREP-SIDRAP-001
+
+    </documentNumber>
+
+    <basedOn rdf:resource="#LCAM_Sidrap"/>
+
+</VerificationReport>
+
+<!-- SUPPORTING DOCUMENT -->
+
+<SupportingDocument rdf:about="#SupportingDocument_Sidrap">
+
+    <documentNumber>
+
+        SD-SIDRAP-001
+
+    </documentNumber>
+
+    <documentTitle>
+
+        Gold Standard Registration Documents (Third Monitoring Period)
+
+    </documentTitle>
+
+</SupportingDocument>
+
+<!-- PROJECT -->
+
+<Project rdf:about="#Project_Sidrap">
+
+    <projectTitle>
+
+        Aksi Mitigasi Perubahan Iklim Proyek PLTB Sidrap
+        75 MW (Pendaftaran dan Verifikasi Proyek Melalui
+        Gold Standard, Periode Ke-3)
+
+    </projectTitle>
+
+    <implementedBy
+        rdf:resource="#PT_UPC_Sidrap_Bayu_Energi"/>
+
+    <hasLocation
+        rdf:resource="#Sidrap_SouthSulawesi"/>
+
+    <registeredIn
+        rdf:resource="#SPEIRegistry"/>
+
+    <usesMethodology
+        rdf:resource="#GoldStandard_Wind_Methodology"/>
+
+    <hasCertificate
+        rdf:resource="#Certificate_Sidrap"/>
+
+    <hasCER
+        rdf:resource="#CER_Sidrap"/>
+    
+    <hasRegistryNumber rdf:resource="#RegistryNo_Sidrap"/>
+
+    <hasDocument rdf:resource="#DRAM_Sidrap"/>
+
+    <hasDocument rdf:resource="#DRAMFinal_Sidrap"/>
+
+    <hasDocument rdf:resource="#LCAM_Sidrap"/>
+
+    <hasDocument rdf:resource="#ValidationReport_Sidrap"/>
+
+    <hasDocument rdf:resource="#VerificationReport_Sidrap"/>
+
+    <hasDocument rdf:resource="#EmissionWorksheet_Sidrap"/>
+
+    <hasDocument rdf:resource="#SupportingDocument_Sidrap"/>
+
+</Project>
+
+
+<!-- MRV WORKFLOW -->
+
+<Proposal rdf:about="#Proposal_Sidrap">
+
+    <hasProject rdf:resource="#Project_Sidrap"/>
+
+    <hasOutputDocument rdf:resource="#DRAM_Sidrap"/>
+
+    <nextProcess rdf:resource="#Validation_Sidrap"/>
+
+</Proposal>
+
+
+<Validation rdf:about="#Validation_Sidrap">
+
+    <hasProject rdf:resource="#Project_Sidrap"/>
+
+    <hasInputDocument rdf:resource="#DRAM_Sidrap"/>
+
+    <hasOutputDocument rdf:resource="#DRAMFinal_Sidrap"/>
+
+    <hasOutputDocument
+        rdf:resource="#ValidationReport_Sidrap"/>
+
+    <nextProcess
+        rdf:resource="#Verification_Sidrap"/>
+
+</Validation>
+
+
+<Verification rdf:about="#Verification_Sidrap">
+
+    <hasProject rdf:resource="#Project_Sidrap"/>
+
+    <hasInputDocument rdf:resource="#DRAMFinal_Sidrap"/>
+
+    <hasOutputDocument rdf:resource="#LCAM_Sidrap"/>
+
+    <hasOutputDocument
+        rdf:resource="#VerificationReport_Sidrap"/>
+
+    <hasOutputDocument
+        rdf:resource="#EmissionWorksheet_Sidrap"/>
+
+    <nextProcess
+        rdf:resource="#Publication_Sidrap"/>
+
+</Verification>
+
+
+<Publication rdf:about="#Publication_Sidrap">
+
+    <hasProject rdf:resource="#Project_Sidrap"/>
+
+    <hasInputDocument
+        rdf:resource="#VerificationReport_Sidrap"/>
+
+    <hasInputDocument
+        rdf:resource="#LCAM_Sidrap"/>
+
+    <hasOutputDocument
+        rdf:resource="#Certificate_Sidrap"/>
+
+</Publication>
+
+</rdf:RDF>
